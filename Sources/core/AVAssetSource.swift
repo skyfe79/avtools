@@ -146,8 +146,8 @@ public class AVAssetSource {
     return (assetOrientation, isPortrait)
   }
 
-  /// Calculates the transform and new size for a rotation operation.
   /// Calculates the transform and new size for a rotation operation based on the given angle and the original size of the asset.
+  ///
   /// - Parameters:
   ///   - angle: The angle in degrees by which the asset is to be rotated.
   ///   - originalSize: The original size of the asset before rotation.
