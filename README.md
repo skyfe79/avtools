@@ -28,7 +28,7 @@ AVTools supports a wide range of operations on audio and video files, including:
 To use AVTools, you need to have Swift installed on your system. Clone the repository and build the project using Swift Package Manager (SPM).
 
 ```bash
-git clone https://github.com/your-repository/avtools.git
+git clone https://github.com/skyfe79/AVTools.git
 cd avtools
 swift build
 ```
