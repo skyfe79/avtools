@@ -1,0 +1,28 @@
+{
+  "configurations": [
+    {
+      "type": "lldb",
+      "request": "launch",
+      "sourceLanguages": [
+        "swift"
+      ],
+      "args": [],
+      "cwd": "${workspaceFolder:avtools}",
+      "name": "Debug avtools",
+      "program": "${workspaceFolder:avtools}/.build/debug/avtools",
+      "preLaunchTask": "swift: Build Debug avtools"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "sourceLanguages": [
+        "swift"
+      ],
+      "args": [],
+      "cwd": "${workspaceFolder:avtools}",
+      "name": "Release avtools",
+      "program": "${workspaceFolder:avtools}/.build/release/avtools",
+      "preLaunchTask": "swift: Build Release avtools"
+    }
+  ]
+}
