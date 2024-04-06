@@ -1,13 +1,13 @@
-# AVTools
+# avtools
 
-AVTools is a command-line tool developed using Swift, designed to perform various operations on audio and video files. It leverages Swift's [ArgumentParser](https://github.com/apple/swift-argument-parser) for handling command-line parsing and [AVFoundation](https://developer.apple.com/documentation/avfoundation/) for processing media tasks.
+avtools is a command-line tool developed using Swift, designed to perform various operations on audio and video files. It leverages Swift's [ArgumentParser](https://github.com/apple/swift-argument-parser) for handling command-line parsing and [AVFoundation](https://developer.apple.com/documentation/avfoundation/) for processing media tasks.
 
-The AVTools CLI is an educational program created to demonstrate how to utilize AVFoundation capabilities from the terminal. It allows developers to learn how to manipulate audio and video files using Swift and AVFoundation.
+The avtools CLI is an educational program created to demonstrate how to utilize AVFoundation capabilities from the terminal. It allows developers to learn how to manipulate audio and video files using Swift and AVFoundation.
 
 
 ## Features
 
-AVTools supports a wide range of operations on audio and video files, including:
+avtools supports a wide range of operations on audio and video files, including:
 
 - **Converting images to video**
 - **Overlaying sound on a video**
@@ -25,17 +25,17 @@ AVTools supports a wide range of operations on audio and video files, including:
 
 ## Installation
 
-To use AVTools, you need to have Swift installed on your system. Clone the repository and build the project using Swift Package Manager (SPM).
+To use avtools, you need to have Swift installed on your system. Clone the repository and build the project using Swift Package Manager (SPM).
 
 ```bash
-git clone https://github.com/skyfe79/AVTools.git
+git clone https://github.com/skyfe79/avtools.git
 cd avtools
 swift build
 ```
 
 ## Usage
 
-After building the project, you can run AVTools from the command line. Here are some examples of how to use the various commands:
+After building the project, you can run avtools from the command line. Here are some examples of how to use the various commands:
 
 ### Convert Images to Video
 
