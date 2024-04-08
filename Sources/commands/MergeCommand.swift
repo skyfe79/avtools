@@ -16,8 +16,8 @@ extension AVTools {
 
     mutating func run() async throws {
       let mergeOperation = MergeOperation(inputURL: options.input)
-      if let editContext = try await mergeOperation.run() {
-        let exporter = AVExporter(editContext: editContext)
+      if let composeContext = try await mergeOperation.run() {
+        let exporter = AVExporter(composeContext: composeContext)
         do {
           try await exporter.export(outputURL: options.output, outputFileType: .mov, presetName: AVAssetExportPresetHighestQuality)
         } catch {

@@ -24,8 +24,8 @@ extension AVTools {
     mutating func run() async throws {
       try await assetSource.load()
       let speedOperation = SpeedOperation(assetSource: assetSource, speed: speed)
-      if let editContext = try await speedOperation.run() {
-        let exporter = AVExporter(editContext: editContext)
+      if let composeContext = try await speedOperation.run() {
+        let exporter = AVExporter(composeContext: composeContext)
         do {
           try await exporter.export(outputURL: options.output)
         } catch {

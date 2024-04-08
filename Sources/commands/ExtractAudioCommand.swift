@@ -21,8 +21,8 @@ extension AVTools {
       print("naturalSize size: \(assetSource.naturalSize)")
 
       let operation = ExtractAudioOperation(assetSource: assetSource)
-      if let editContext = try await operation.run() {
-        let exporter = AVExporter(editContext: editContext)
+      if let composeContext = try await operation.run() {
+        let exporter = AVExporter(composeContext: composeContext)
         do {
           try await exporter.export(outputURL: options.output, outputFileType: .m4a, presetName: AVAssetExportPresetAppleM4A)
         } catch {

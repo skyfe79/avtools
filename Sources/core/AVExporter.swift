@@ -3,12 +3,12 @@ import AVFoundation
 /// A class responsible for exporting AV assets.
 class AVExporter {
   /// The editing context containing the asset to be exported.
-  private let editContext: AVComposeContext
+  private let composeContext: AVComposeContext
   
   /// Initializes a new exporter with the given editing context.
-  /// - Parameter editContext: The context containing the asset to be exported.
-  init(editContext: AVComposeContext) {
-    self.editContext = editContext
+  /// - Parameter composeContext: The context containing the asset to be exported.
+  init(composeContext: AVComposeContext) {
+    self.composeContext = composeContext
   }
 
   /// Exports the asset to the specified URL with the given settings.
@@ -18,17 +18,17 @@ class AVExporter {
   ///   - presetName: The preset name to use for the export. Defaults to `AVAssetExportPresetHighestQuality`.
   /// - Throws: An error if the export fails.
   func export(outputURL: URL, outputFileType: AVFileType = .mov, presetName: String = AVAssetExportPresetHighestQuality) async throws {
-    guard let exportSession = AVAssetExportSession(asset: editContext.composition, presetName: presetName) else {
+    guard let exportSession = AVAssetExportSession(asset: composeContext.composition, presetName: presetName) else {
       throw "Failed to create AVAssetExportSession"
     }
     exportSession.outputURL = outputURL
     exportSession.outputFileType = outputFileType
     
     // Apply video composition and audio mix if they exist.
-    if let videoComposition = editContext.videoComposition {
+    if let videoComposition = composeContext.videoComposition {
       exportSession.videoComposition = videoComposition
     }
-    if let audioMix = editContext.audioMix {
+    if let audioMix = composeContext.audioMix {
       exportSession.audioMix = audioMix
     }
     await exportSession.export()

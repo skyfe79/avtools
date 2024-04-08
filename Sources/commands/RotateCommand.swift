@@ -24,8 +24,8 @@ extension AVTools {
       print("naturalSize size: \(assetSource.naturalSize)")
 
       let rotateOperation = RotateOperation(assetSource: assetSource, angle: angle)
-      if let editContext = try await rotateOperation.run() {
-        let exporter = AVExporter(editContext: editContext)
+      if let composeContext = try await rotateOperation.run() {
+        let exporter = AVExporter(composeContext: composeContext)
         do {
           try await exporter.export(outputURL: options.output)
         } catch {

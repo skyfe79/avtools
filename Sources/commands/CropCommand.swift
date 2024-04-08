@@ -25,8 +25,8 @@ extension AVTools {
       print("naturalSize size: \(assetSource.naturalSize)")
 
       let cropOperation = CropOperation(assetSource: assetSource, cropRect: cropRect)
-      if let editContext = try await cropOperation.run() {
-        let exporter = AVExporter(editContext: editContext)
+      if let composeContext = try await cropOperation.run() {
+        let exporter = AVExporter(composeContext: composeContext)
         do {
           try await exporter.export(outputURL: options.output)
         } catch {

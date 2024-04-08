@@ -30,8 +30,8 @@ extension AVTools {
       print("naturalSize size: \(assetSource.naturalSize)")
 
       let operation = OverlayImageOperation(assetSource: assetSource, overlayImage: image, start: start, duration: duration)
-      if let editContext = try await operation.run() {
-        let exporter = AVExporter(editContext: editContext)
+      if let composeContext = try await operation.run() {
+        let exporter = AVExporter(composeContext: composeContext)
         do {
           try await exporter.export(outputURL: options.output)
         } catch {

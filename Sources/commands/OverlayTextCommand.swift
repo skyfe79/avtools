@@ -29,8 +29,8 @@ extension AVTools {
     mutating func run() async throws {
       try await assetSource.load()
       let overlayTextOperation = OverlayTextOperation(assetSource: assetSource, text: text, fontSize: size, color: color)
-      if let editContext = try await overlayTextOperation.run() {
-        let exporter = AVExporter(editContext: editContext)
+      if let composeContext = try await overlayTextOperation.run() {
+        let exporter = AVExporter(composeContext: composeContext)
         do {
           try await exporter.export(outputURL: options.output)
         } catch {
