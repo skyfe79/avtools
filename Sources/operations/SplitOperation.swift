@@ -29,8 +29,8 @@ class SplitOperation: AVOperation {
   /// This method creates a directory at the output URL (if it doesn't already exist), calculates the time ranges for each segment based on the specified duration, and exports each segment to the output URL.
   ///
   /// - Throws: An error if the operation cannot be completed.
-  /// - Returns: An optional `AVAssetEditContext` object representing the result of the operation, which is `nil` in this case as the operation does not modify the asset context.
-  func run() async throws -> AVAssetEditContext? {
+  /// - Returns: An optional `AVComposeContext` object representing the result of the operation, which is `nil` in this case as the operation does not modify the asset context.
+  func run() async throws -> AVComposeContext? {
     do {
       try FileManager.default.createDirectory(at: outputURL, withIntermediateDirectories: true, attributes: nil)
       let ranges = CMTimeRange.stride(range: assetSource.duration.range, by: CMTimeValue(duration))

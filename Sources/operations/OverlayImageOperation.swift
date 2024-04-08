@@ -31,10 +31,10 @@ class OverlayImageOperation: AVOperation {
   /// This method creates a composition and a video composition, then overlays the specified image onto the video track of the asset source.
   ///
   /// - Throws: An error if the operation cannot be completed.
-  /// - Returns: An optional `AVAssetEditContext` object representing the result of the operation.
-  func run() async throws -> AVAssetEditContext? {
+  /// - Returns: An optional `AVComposeContext` object representing the result of the operation.
+  func run() async throws -> AVComposeContext? {
     let (composition, videoComposition) = await createComposition()
-    return AVAssetEditContext(composition: composition, videoComposition: videoComposition)
+    return AVComposeContext(composition: composition, videoComposition: videoComposition)
   }
 
   /// Creates a composition and a video composition for the overlay operation.

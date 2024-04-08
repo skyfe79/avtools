@@ -33,9 +33,9 @@ class GenerateImagesOperation: AVOperation {
   /// This method generates images from the source asset at the specified times or at intervals defined by `stride`. The generated images are saved to the folder specified by `outputURL`.
   ///
   /// - Throws: An error if neither times nor stride are provided.
-  /// - Returns: An optional `AVAssetEditContext` object representing the result of the operation. Currently, this method always returns `nil`.
+  /// - Returns: An optional `AVComposeContext` object representing the result of the operation. Currently, this method always returns `nil`.
   @discardableResult
-  func run() async throws -> AVAssetEditContext? {
+  func run() async throws -> AVComposeContext? {
     guard times.isEmpty == false || stride > 0 else {
       throw "Either times or stride must be provided"
     }

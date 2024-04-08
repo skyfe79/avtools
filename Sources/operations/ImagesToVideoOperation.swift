@@ -42,10 +42,10 @@ class ImagesToVideoOperation: AVOperation {
 
   /// Executes the operation to generate a video from the images.
   ///
-  /// - Returns: An optional `AVAssetEditContext` object representing the result of the operation. Currently, this method always returns `nil`.
+  /// - Returns: An optional `AVComposeContext` object representing the result of the operation. Currently, this method always returns `nil`.
   /// - Throws: An error if the image size cannot be determined or the video cannot be written.
   @discardableResult
-  func run() async throws -> AVAssetEditContext? {
+  func run() async throws -> AVComposeContext? {
     try figureoutImageSize()
     guard imageSize != .zero else {
       throw NSError(domain: "ImagesToVideoOperation", code: 0, userInfo: [NSLocalizedDescriptionKey: "Failed to determine image size."])

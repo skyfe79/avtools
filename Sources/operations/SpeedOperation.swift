@@ -21,10 +21,10 @@ class SpeedOperation: AVOperation {
   /// Executes the speed adjustment operation asynchronously.
   ///
   /// - Throws: An error if the operation cannot be completed.
-  /// - Returns: An optional `AVAssetEditContext` object representing the result of the operation.
-  func run() async throws -> AVAssetEditContext? {
+  /// - Returns: An optional `AVComposeContext` object representing the result of the operation.
+  func run() async throws -> AVComposeContext? {
     let (composition, videoCompositon) = await createComposition()
-    return AVAssetEditContext(composition: composition, videoComposition: videoCompositon)
+    return AVComposeContext(composition: composition, videoComposition: videoCompositon)
   }
 
   /// Creates a composition and a video composition for the speed adjustment operation.

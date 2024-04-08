@@ -19,10 +19,10 @@ class ExtractAudioOperation: AVOperation {
   /// This method creates an `AVComposition` containing only the audio track of the source asset.
   ///
   /// - Throws: An error if the operation cannot be completed.
-  /// - Returns: An optional `AVAssetEditContext` object representing the result of the operation.
-  func run() async throws -> AVAssetEditContext? {
+  /// - Returns: An optional `AVComposeContext` object representing the result of the operation.
+  func run() async throws -> AVComposeContext? {
     let composition = await createComposition()
-    return AVAssetEditContext(composition: composition)
+    return AVComposeContext(composition: composition)
   }
 
   /// Asynchronously creates an `AVComposition` with the audio track of the source asset.

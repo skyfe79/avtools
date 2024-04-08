@@ -22,11 +22,11 @@ class RotateOperation: AVOperation {
   /// Executes the rotation operation asynchronously.
   ///
   /// - Throws: An error if the operation cannot be completed.
-  /// - Returns: An optional `AVAssetEditContext` object representing the result of the rotation operation.
-  func run() async throws -> AVAssetEditContext? {
+  /// - Returns: An optional `AVComposeContext` object representing the result of the rotation operation.
+  func run() async throws -> AVComposeContext? {
     let composition = await createComposition()
     let videoComposition = await createVideoComposition()
-    return AVAssetEditContext(composition: composition, videoComposition: videoComposition)
+    return AVComposeContext(composition: composition, videoComposition: videoComposition)
   }
 
   /// Creates a composition for the rotation operation.

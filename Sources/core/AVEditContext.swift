@@ -1,9 +1,9 @@
 import AVFoundation
 
-/// A context for editing `AVAsset` instances, encapsulating composition, video composition, and audio mix.
+/// A context for composing `AVAsset` instances, encapsulating composition, video composition, and audio mix.
 ///
 /// This class provides a structured way to manage the components required for editing an `AVAsset`, such as combining multiple assets, applying video and audio effects, and exporting the final composition.
-class AVAssetEditContext {
+class AVComposeContext {
   /// The composition of assets.
   ///
   /// This property holds the `AVComposition` object that represents the combined assets used in the editing context.
@@ -19,7 +19,7 @@ class AVAssetEditContext {
   /// This optional property holds an `AVAudioMix` object, which defines how audio tracks are mixed and processed. It can include parameters for applying audio effects, volume adjustments, and other audio manipulations.
   let audioMix: AVAudioMix?
 
-  /// Initializes a new `AVAssetEditContext`.
+  /// Initializes a new `AVComposeContext`.
   ///
   /// - Parameters:
   ///   - composition: An `AVComposition` object representing the combined assets.

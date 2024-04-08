@@ -16,14 +16,14 @@ class ExtractVideoOperation: AVOperation {
 
   /// Runs the video extraction operation asynchronously.
   ///
-  /// This method creates an `AVComposition` and an `AVVideoComposition`, then returns an `AVAssetEditContext` containing these compositions.
+  /// This method creates an `AVComposition` and an `AVVideoComposition`, then returns an `AVComposeContext` containing these compositions.
   ///
   /// - Throws: An error if the operation cannot be completed.
-  /// - Returns: An optional `AVAssetEditContext` object representing the result of the operation.
-  func run() async throws -> AVAssetEditContext? {
+  /// - Returns: An optional `AVComposeContext` object representing the result of the operation.
+  func run() async throws -> AVComposeContext? {
     let composition = await createComposition()
     let videoComposition = await createVideoComposition()
-    return AVAssetEditContext(composition: composition, videoComposition: videoComposition)
+    return AVComposeContext(composition: composition, videoComposition: videoComposition)
   }
 
   /// Asynchronously creates an `AVComposition` with the video track of the source asset.

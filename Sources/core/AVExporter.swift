@@ -3,11 +3,11 @@ import AVFoundation
 /// A class responsible for exporting AV assets.
 class AVExporter {
   /// The editing context containing the asset to be exported.
-  private let editContext: AVAssetEditContext
+  private let editContext: AVComposeContext
   
   /// Initializes a new exporter with the given editing context.
   /// - Parameter editContext: The context containing the asset to be exported.
-  init(editContext: AVAssetEditContext) {
+  init(editContext: AVComposeContext) {
     self.editContext = editContext
   }
 

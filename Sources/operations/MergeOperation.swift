@@ -20,8 +20,8 @@ class MergeOperation: AVOperation {
   /// This method reads all files from the input directory, sorts them, and merges their audio and video tracks into a single composition. It also creates a video composition to ensure consistent frame rate across the merged video.
   ///
   /// - Throws: An error if the files cannot be read or the merge operation fails.
-  /// - Returns: An optional `AVAssetEditContext` object representing the result of the merge operation.
-  func run() async throws -> AVAssetEditContext? {
+  /// - Returns: An optional `AVComposeContext` object representing the result of the merge operation.
+  func run() async throws -> AVComposeContext? {
     // Retrieve and sort files from the input directory.
     let files = try FileManager.default.contentsOfDirectory(at: inputURL, includingPropertiesForKeys: nil)
     let sortedFiles = files.sorted { $0.lastPathComponent < $1.lastPathComponent }
@@ -57,6 +57,6 @@ class MergeOperation: AVOperation {
     videoComposition.frameDuration = CMTime(value: 1, timescale: 30)
 
     // Return the editing context containing the merged composition and video composition.
-    return AVAssetEditContext(composition: composition, videoComposition: videoComposition)
+    return AVComposeContext(composition: composition, videoComposition: videoComposition)
   }
 }
